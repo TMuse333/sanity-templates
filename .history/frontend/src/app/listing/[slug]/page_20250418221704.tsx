@@ -36,10 +36,10 @@ export default async function PropertyPage({
 
   const propertyData = await client.fetch(query, { slug });
 
-  const formattedListingImages = (propertyData.listingImages || []).map((image: { asset?: { url?: string }, alt?: string }) => ({
+  const formattedListingImages = propertyData?.listingImages?.map((image: any) => ({
     src: image.asset?.url || '',
     alt: image.alt || 'Listing image',
-  }));
+  })) || [];
 
   return (
     <Property
