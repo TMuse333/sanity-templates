@@ -27,17 +27,16 @@ const query = groq`
   }
 `;
 
-interface PropertyPageProps {
-  params: Promise<{ slug: string }>;
-}
+// interface PropertyPageProps {
+//   params: { slug: string };
+// }
 
-export default async function PropertyPage({ params }: PropertyPageProps) {
-  // Await the params since they are a Promise
-  const { slug } = await params;
+export default async function PropertyPage() {
+  // const { slug } = params;
 
   try {
     // Fetch property data based on the slug
-    const propertyData = await client.fetch(query, { slug });
+    const propertyData = await client.fetch();
 
     if (!propertyData) {
       return <div>No property found.</div>;

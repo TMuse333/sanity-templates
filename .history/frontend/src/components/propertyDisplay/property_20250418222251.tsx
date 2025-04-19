@@ -94,16 +94,6 @@ const Property: React.FC<PropertyProps> = ({
             <li className="mb-2 sm:text-lg">Lot Size: {specs.lot}</li>
             <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
           </ul>
-
-          <div className="w-[95vw] mx-auto h-[3px] bg-gray-600 mt-6 rounded-2xl max-w-[400px]" />
-          <h3 className="font-bold my-4 text-xl sm:text-2xl">Property Highlights</h3>
-          <ul className="font-semibold">
-            <li className="mb-2 sm:text-lg">Air Conditioning: {highlights.airConditioning}</li>
-            <li className="mb-2 sm:text-lg">Heating: {highlights.heating}</li>
-            <li className="mb-2 sm:text-lg">Foundation: {highlights.foundation}</li>
-            <li className="mb-2 sm:text-lg">Flooring: {highlights.flooring}</li>
-            <li className="mb-2 sm:text-lg">Style: {highlights.style}</li>
-          </ul>
         </section>
       </section>
 

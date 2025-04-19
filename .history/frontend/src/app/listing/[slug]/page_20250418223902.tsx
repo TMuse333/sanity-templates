@@ -28,12 +28,11 @@ const query = groq`
 `;
 
 interface PropertyPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default async function PropertyPage({ params }: PropertyPageProps) {
-  // Await the params since they are a Promise
-  const { slug } = await params;
+  const { slug } = params;
 
   try {
     // Fetch property data based on the slug

@@ -2,42 +2,41 @@ import { groq } from 'next-sanity';
 import { client } from '@/lib/sanity';
 import Property from '@/components/propertyDisplay/property';
 
-const query = groq`
-  *[_type == "property" && slug.current == $slug][0] {
-    mainSrc {
-      asset -> {
-        url
-      }
-    },
-    address,
-    price,
-    location,
-    beds,
-    bath,
-    squareFt,
-    propertyDescription,
-    specs,
-    highlights,
-    listingImages[] {
-      asset -> {
-        url
-      },
-      alt
-    }
-  }
-`;
+// const query = groq`
+//   *[_type == "property" && slug.current == $slug][0] {
+//     mainSrc {
+//       asset -> {
+//         url
+//       }
+//     },
+//     address,
+//     price,
+//     location,
+//     beds,
+//     bath,
+//     squareFt,
+//     propertyDescription,
+//     specs,
+//     highlights,
+//     listingImages[] {
+//       asset -> {
+//         url
+//       },
+//       alt
+//     }
+//   }
+// `;
 
-interface PropertyPageProps {
-  params: Promise<{ slug: string }>;
-}
+// interface PropertyPageProps {
+//   params: { slug: string };
+// }
 
-export default async function PropertyPage({ params }: PropertyPageProps) {
-  // Await the params since they are a Promise
-  const { slug } = await params;
+export default async function PropertyPage() {
+  // const { slug } = params;
 
   try {
     // Fetch property data based on the slug
-    const propertyData = await client.fetch(query, { slug });
+    const propertyData = await client.fetch();
 
     if (!propertyData) {
       return <div>No property found.</div>;
