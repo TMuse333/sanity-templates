@@ -53,8 +53,7 @@ const PropertyPage = async ({ params }: PropertyPageProps) => {
   const { slug } = params;
 
   // Fetch the property data using the slug
-  const propertyData = await client.fetch(query, { slug });
-
+  const propertyData = await client.fetch<Property>(query, { slug });
 
   console.log(query)
 

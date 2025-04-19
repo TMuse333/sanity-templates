@@ -3,58 +3,18 @@ import { client } from '@/lib/sanity'; // Assuming you have your sanityClient se
 import Property from '@/components/propertyDisplay/property';// Your Property component
 
 // Query Sanity data using the slug
-const query = groq`
-  *[_type == "property" && slug.current == $slug][0] {
-    mainSrc {
-      asset -> {
-        url
-      }
-    },
-    address,
-    price,
-    location,
-    beds,
-    bath,
-    squareFt,
-    propertyDescription,
-    specs,
-    highlights,
-    listingImages[] {
-      asset -> {
-        url
-      },
-      alt
-    }
-  }
-`;
+
 
 
 interface PropertyPageProps {
   params: { slug: string };
 }
 
-type Property = {
-  mainSrc: { asset: { url: string } };
-  address: string;
-  price: number;
-  location: string;
-  beds: number;
-  bath: number;
-  squareFt: number;
-  propertyDescription: string;
-  specs: string[];
-  highlights: string[];
-  listingImages: {
-    asset: { url: string };
-    alt?: string;
-  }[];
-};
 const PropertyPage = async ({ params }: PropertyPageProps) => {
   const { slug } = params;
 
   // Fetch the property data using the slug
-  const propertyData = await client.fetch(query, { slug });
-
+  const propertyData = await client.fetch();
 
   console.log(query)
 

@@ -33,28 +33,11 @@ interface PropertyPageProps {
   params: { slug: string };
 }
 
-type Property = {
-  mainSrc: { asset: { url: string } };
-  address: string;
-  price: number;
-  location: string;
-  beds: number;
-  bath: number;
-  squareFt: number;
-  propertyDescription: string;
-  specs: string[];
-  highlights: string[];
-  listingImages: {
-    asset: { url: string };
-    alt?: string;
-  }[];
-};
 const PropertyPage = async ({ params }: PropertyPageProps) => {
   const { slug } = params;
 
   // Fetch the property data using the slug
-  const propertyData = await client.fetch(query, { slug });
-
+  const propertyData = await client.fetch<Prop(query, { slug });
 
   console.log(query)
 

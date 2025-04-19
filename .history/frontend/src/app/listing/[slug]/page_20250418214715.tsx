@@ -33,36 +33,18 @@ interface PropertyPageProps {
   params: { slug: string };
 }
 
-type Property = {
-  mainSrc: { asset: { url: string } };
-  address: string;
-  price: number;
-  location: string;
-  beds: number;
-  bath: number;
-  squareFt: number;
-  propertyDescription: string;
-  specs: string[];
-  highlights: string[];
-  listingImages: {
-    asset: { url: string };
-    alt?: string;
-  }[];
-};
 const PropertyPage = async ({ params }: PropertyPageProps) => {
   const { slug } = params;
 
   // Fetch the property data using the slug
   const propertyData = await client.fetch(query, { slug });
 
-
   console.log(query)
 
-  const formattedListingImages = (propertyData.listingImages || []).map((image: { asset?: { url?: string }, alt?: string }) => ({
+  const formattedListingImages = propertyData.listingImages.map((image: { asset: { url: any; }; alt: any; }) => ({
     src: image.asset?.url || '',
-    alt: image.alt || 'Listing image',
+    alt: image.alt || 'Listing image',  // Use a default alt if it's missing
   }));
-  
   
   // Pass this to your component
 
