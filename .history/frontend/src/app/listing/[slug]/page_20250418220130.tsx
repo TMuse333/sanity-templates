@@ -49,7 +49,7 @@ type Property = {
     alt?: string;
   }[];
 };
-const PropertyPage = async ({ params }: PropertyPageProps): Promise<React.JSX.Element> => {
+const PropertyPage = async ({ params }: PropertyPageProps) => {
   const { slug } = params;
 
   // Fetch the property data using the slug
