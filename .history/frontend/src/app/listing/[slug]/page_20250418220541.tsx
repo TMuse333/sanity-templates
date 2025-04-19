@@ -1,7 +1,8 @@
 import { groq } from 'next-sanity';
-import { client } from '@/lib/sanity';
-import Property from '@/components/propertyDisplay/property';
+import { client } from '@/lib/sanity'; // Assuming you have your sanityClient setup
+import Property from '@/components/propertyDisplay/property';// Your Property component
 
+// Query Sanity data using the slug
 const query = groq`
   *[_type == "property" && slug.current == $slug][0] {
     mainSrc {
@@ -27,19 +28,45 @@ const query = groq`
   }
 `;
 
-export default async function PropertyPage({
-  params,
-}: {
+
+interface PropertyPageProps {
   params: { slug: string };
-}) {
+}
+
+type Property = {
+  mainSrc: { asset: { url: string } };
+  address: string;
+  price: number;
+  location: string;
+  beds: number;
+  bath: number;
+  squareFt: number;
+  propertyDescription: string;
+  specs: string[];
+  highlights: string[];
+  listingImages: {
+    asset: { url: string };
+    alt?: string;
+  }[];
+};
+const PropertyPage = async ({ params }: PropertyPageProps): Promise<React.JSX.Element> => {
   const { slug } = params;
 
+  // Fetch the property data using the slug
   const propertyData = await client.fetch(query, { slug });
 
-  const formattedListingImages = propertyData?.listingImages?.map((image: any) => ({
+
+  console.log(query)
+
+  const formattedListingImages = (propertyData.listingImages || []).map((image: { asset?: { url?: string }, alt?: string }) => ({
     src: image.asset?.url || '',
     alt: image.alt || 'Listing image',
-  })) || [];
+  }));
+  
+  
+  // Pass this to your component
+
+  
 
   return (
     <Property
@@ -56,4 +83,6 @@ export default async function PropertyPage({
       listingImages={formattedListingImages}
     />
   );
-}
+};
+
+export default PropertyPage;
