@@ -178,7 +178,7 @@ text-black">
     <div className="w-[95vw] mx-auto h-[3px]
     bg-gray-600 text-black max-w-[400px] mt-6 rounded-2xl"
     />
-    <section className="flex flex-col md:flex-row">
+    {/* <section className="flex flex-col md:flex-row">
       
 
 
@@ -191,7 +191,9 @@ text-black">
 
 
 
-
+    {/* <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl max-w-[400px]"
+    /> */}
  
 
    
@@ -209,7 +211,10 @@ text-black">
 <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
     </ul>
     </div>
-
+    {/* <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    /> */}
     <div>
 
   
@@ -343,7 +348,7 @@ referrerPolicy="no-referrer-when-downgrade"
 
   
 
-    </section>
+    </section> */}
     <div className="w-[95vw] mx-auto h-[3px]
     bg-gray-600 mt-6 rounded-2xl
     max-w-[400px]"

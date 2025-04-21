@@ -47,8 +47,6 @@ interface PreviewProps {
   beds: string;
   bath: string;
   squareFt: string;
-
-  //particles viliam lane
 }
 
 const PropertyPreview: React.FC<PreviewProps> = ({
@@ -157,7 +155,7 @@ text-black">
     "><span className='text-black'>
      Price: </span>
      <span className="text-green-700">
-     {price}$ </span>
+      </span>{price}$
       </p>
             </section>
     <h2 className="mb-2 font-extrabold
@@ -182,7 +180,7 @@ text-black">
       
 
 
-    <section className="w-[95vw] max-w-[1200px]
+    <section className="w-[95vw] max-w-[400px]
     mx-auto text-black">
         <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
@@ -191,16 +189,13 @@ text-black">
 
 
 
-
- 
-
-   
-    <section className="flex flex-row">
-    <div>
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl max-w-[400px]"
+    />
+    <section className="">
     <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
     Property Specs</h3>
-  
     <ul className="font-semibold">
        <li className="mb-2 sm:text-lg">Property type: {specs.type}</li>
        <li className="mb-2 sm:text-lg">Put on market: {specs.putOnMarket}</li>
@@ -208,11 +203,10 @@ text-black">
 <li className="mb-2 sm:text-lg">Lot Size: {specs.lot}</li>
 <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
     </ul>
-    </div>
-
-    <div>
-
-  
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    />
       <h3 className="font-bold
         my-4 text-xl
         sm:text-2xl">
@@ -225,10 +219,6 @@ text-black">
 <li className="mb-2 sm:text-lg">Flooring: {highlights.flooring}</li>
 <li className="mb-2 sm:text-lg">Style: {highlights.style}</li>
 </ul>
-</div>
-
-
-
 
 
 <div className="flex items-center justify-center mx-auto
@@ -238,10 +228,6 @@ w-screen">
 
 </div>
 
-
-
-
-</section>
 <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
     Map for&nbsp;{address}</h3>
@@ -260,123 +246,58 @@ referrerPolicy="no-referrer-when-downgrade"
 
 </iframe>
 
+
+</section>
+
+
   
            </section>
            
-  {/*         
-            <div className="bg-gray-800 w-[95vw] max-w-[400px] mx-auto mt-6 p-6 rounded-lg max-h-[700px] overflow-y-auto">
-    <h2 className="font-bold text-xl mb-4 sm:text-2xl text-white">Request More Info</h2>
-    <form className="flex flex-col space-y-4 text-white">
+        
+           <div className="bg-gray-800 w-[95vw] max-w-[400px] mx-auto mt-6 p-6 rounded-lg
+           max-h-[600px]">
+<h2 className="font-bold text-xl mb-4 sm:text-2xl">Request More Info</h2>
+<form className="flex flex-col space-y-4">
+<label className="flex flex-col">
+  <span className="font-semibold sm:text-lg">Full Name</span>
+  <input
+    type="text"
+    placeholder="Enter your full name"
+    className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+  />
+</label>
 
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Full Name</span>
-        <input
-          type="text"
-          placeholder="Enter your full name"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
+<label className="flex flex-col">
+  <span className="font-semibold sm:text-lg">Email</span>
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+  />
+</label>
 
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Email</span>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
+<label className="flex flex-col">
+  <span className="font-semibold sm:text-lg">Interest</span>
+  <textarea
+    placeholder={`I am interested in ${address}`}
+    className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none"
+    rows={3}
+  />
+</label>
 
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Phone Number</span>
-        <input
-          type="tel"
-          placeholder="Optional, for faster contact"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Budget</span>
-        <input
-          type="text"
-          placeholder="e.g. $600,000 - $750,000"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Ideal Move-in Timeline</span>
-        <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white">
-          <option>ASAP</option>
-          <option>Within 1-3 months</option>
-          <option>Within 6 months</option>
-          <option>Just browsing for now</option>
-        </select>
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Preferred Contact Method</span>
-        <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white">
-          <option>Email</option>
-          <option>Phone Call</option>
-          <option>Text Message</option>
-        </select>
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Message / Details</span>
-        <textarea
-          placeholder={`I am interested in ${address}`}
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none text-white"
-          rows={3}
-        />
-      </label>
-
-      <button
-        type="button"
-        className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition sm:text-lg"
-      >
-        Submit
-      </button>
-    </form>
-  </div> */}
-
-  
-
+<button
+  type="button"
+  className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition sm:text-lg"
+>
+  Submit
+</button>
+</form>
+</div>
     </section>
     <div className="w-[95vw] mx-auto h-[3px]
     bg-gray-600 mt-6 rounded-2xl
     max-w-[400px]"
     />
-    <div className="bg-white shadow-md rounded-2xl p-6 w-[90vw] mx-auto
-    text-black">
-  <h2 className="text-2xl font-semibold mb-6 border-b pb-2">
-    60 Helen Creighton Court, Bedford, B4B 0Z5
-  </h2>
-
-  {/* Group 1 */}
-  <div className="flex flex-col md:flex-row md:flex-wrap gap-4 py-4 border-b">
-    <div className="md:w-1/3"><span className="font-medium">Status:</span> PENDING</div>
-    <div className="md:w-1/3"><span className="font-medium">Listing Price:</span> $824,900</div>
-    <div className="md:w-1/3"><span className="font-medium">MLS®:</span> 202507639</div>
-    <div className="md:w-1/3"><span className="font-medium">Type:</span> Single Family</div>
-    <div className="md:w-1/3"><span className="font-medium">Style:</span> Semi-Detached</div>
-    <div className="md:w-1/3"><span className="font-medium">Age:</span> 3 years</div>
-    <div className="md:w-1/3"><span className="font-medium">Square Footage (MLA):</span> 1,530 ft²</div>
-    <div className="md:w-1/3"><span className="font-medium">Total Finished SqFt (TLA):</span> 2,980 ft²</div>
-    <div className="md:w-1/3"><span className="font-medium">PID:</span> 41508821</div>
-    <div className="md:w-1/3"><span className="font-medium">Bedrooms:</span> 4</div>
-    <div className="md:w-1/3"><span className="font-medium">Full Baths:</span> 3</div>
-    <div className="md:w-1/3"><span className="font-medium">Half Baths:</span> 0</div>
-  </div>
-
-  {/* Group 2 */}
-  <div className="flex flex-col md:flex-row md:gap-6 gap-2 pt-4">
-    <div className="md:w-1/3"><span className="font-medium">Water:</span> Municipal</div>
-    <div className="md:w-1/3"><span className="font-medium">Sewer:</span> Municipal</div>
-    <div className="md:w-1/3"><span className="font-medium">Utilities:</span> Cable, Electricity, High Speed Internet, Natural Gas</div>
-  </div>
-</div>
 <GridCarousel
 images={listingImages}
 isGrid

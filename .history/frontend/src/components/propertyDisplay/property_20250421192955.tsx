@@ -178,7 +178,7 @@ text-black">
     <div className="w-[95vw] mx-auto h-[3px]
     bg-gray-600 text-black max-w-[400px] mt-6 rounded-2xl"
     />
-    <section className="flex flex-col md:flex-row">
+    {/* <section className="flex flex-col md:flex-row">
       
 
 
@@ -343,7 +343,7 @@ referrerPolicy="no-referrer-when-downgrade"
 
   
 
-    </section>
+    </section> */}
     <div className="w-[95vw] mx-auto h-[3px]
     bg-gray-600 mt-6 rounded-2xl
     max-w-[400px]"

@@ -48,7 +48,7 @@ interface PreviewProps {
   bath: string;
   squareFt: string;
 
-  //particles viliam lane
+  //
 }
 
 const PropertyPreview: React.FC<PreviewProps> = ({
@@ -182,7 +182,7 @@ text-black">
       
 
 
-    <section className="w-[95vw] max-w-[1200px]
+    <section className="w-[95vw] max-w-[400px]
     mx-auto text-black">
         <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
@@ -191,16 +191,13 @@ text-black">
 
 
 
-
- 
-
-   
-    <section className="flex flex-row">
-    <div>
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl max-w-[400px]"
+    />
+    <section className="">
     <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
     Property Specs</h3>
-  
     <ul className="font-semibold">
        <li className="mb-2 sm:text-lg">Property type: {specs.type}</li>
        <li className="mb-2 sm:text-lg">Put on market: {specs.putOnMarket}</li>
@@ -208,11 +205,10 @@ text-black">
 <li className="mb-2 sm:text-lg">Lot Size: {specs.lot}</li>
 <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
     </ul>
-    </div>
-
-    <div>
-
-  
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    />
       <h3 className="font-bold
         my-4 text-xl
         sm:text-2xl">
@@ -225,7 +221,6 @@ text-black">
 <li className="mb-2 sm:text-lg">Flooring: {highlights.flooring}</li>
 <li className="mb-2 sm:text-lg">Style: {highlights.style}</li>
 </ul>
-</div>
 
 
 
@@ -238,10 +233,6 @@ w-screen">
 
 </div>
 
-
-
-
-</section>
 <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
     Map for&nbsp;{address}</h3>
@@ -259,6 +250,10 @@ referrerPolicy="no-referrer-when-downgrade"
 >
 
 </iframe>
+
+
+</section>
+
 
   
            </section>

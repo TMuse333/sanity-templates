@@ -47,8 +47,6 @@ interface PreviewProps {
   beds: string;
   bath: string;
   squareFt: string;
-
-  //particles viliam lane
 }
 
 const PropertyPreview: React.FC<PreviewProps> = ({
@@ -182,7 +180,7 @@ text-black">
       
 
 
-    <section className="w-[95vw] max-w-[1200px]
+    <section className="w-[95vw] max-w-[400px]
     mx-auto text-black">
         <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
@@ -191,16 +189,13 @@ text-black">
 
 
 
-
- 
-
-   
-    <section className="flex flex-row">
-    <div>
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl max-w-[400px]"
+    />
+    <section className="">
     <h3 className="font-bold
         my-4 text-xl sm:text-2xl">
     Property Specs</h3>
-  
     <ul className="font-semibold">
        <li className="mb-2 sm:text-lg">Property type: {specs.type}</li>
        <li className="mb-2 sm:text-lg">Put on market: {specs.putOnMarket}</li>
@@ -208,11 +203,10 @@ text-black">
 <li className="mb-2 sm:text-lg">Lot Size: {specs.lot}</li>
 <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
     </ul>
-    </div>
-
-    <div>
-
-  
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    />
       <h3 className="font-bold
         my-4 text-xl
         sm:text-2xl">
@@ -225,131 +219,8 @@ text-black">
 <li className="mb-2 sm:text-lg">Flooring: {highlights.flooring}</li>
 <li className="mb-2 sm:text-lg">Style: {highlights.style}</li>
 </ul>
-</div>
 
-
-
-
-
-<div className="flex items-center justify-center mx-auto
-w-screen">
-
-
-
-</div>
-
-
-
-
-</section>
-<h3 className="font-bold
-        my-4 text-xl sm:text-2xl">
-    Map for&nbsp;{address}</h3>
-<iframe className="ml-auto mr-auto
-        w-[80vw] sm:w-[50vw] max-w-[500px] mt-5"
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5669.174538738048!2d-63.664255299999994!3d44.7280343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5989c1fe032eb9%3A0x6dd167bbacea91be!2s1361%20Bedford%20Hwy%2C%20Bedford%2C%20NS%20B4A%201C5!5e0!3m2!1sen!2sca!4v1716386513142!5m2!1sen!2sca"
-width="600"
-height="450"
-style={{
-border:'0'
-}} // Pass the styles object here
-allowFullScreen
-loading="lazy"
-referrerPolicy="no-referrer-when-downgrade"
->
-
-</iframe>
-
-  
-           </section>
-           
-  {/*         
-            <div className="bg-gray-800 w-[95vw] max-w-[400px] mx-auto mt-6 p-6 rounded-lg max-h-[700px] overflow-y-auto">
-    <h2 className="font-bold text-xl mb-4 sm:text-2xl text-white">Request More Info</h2>
-    <form className="flex flex-col space-y-4 text-white">
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Full Name</span>
-        <input
-          type="text"
-          placeholder="Enter your full name"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Email</span>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Phone Number</span>
-        <input
-          type="tel"
-          placeholder="Optional, for faster contact"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Budget</span>
-        <input
-          type="text"
-          placeholder="e.g. $600,000 - $750,000"
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
-        />
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Ideal Move-in Timeline</span>
-        <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white">
-          <option>ASAP</option>
-          <option>Within 1-3 months</option>
-          <option>Within 6 months</option>
-          <option>Just browsing for now</option>
-        </select>
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Preferred Contact Method</span>
-        <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white">
-          <option>Email</option>
-          <option>Phone Call</option>
-          <option>Text Message</option>
-        </select>
-      </label>
-
-      <label className="flex flex-col">
-        <span className="font-semibold sm:text-lg">Message / Details</span>
-        <textarea
-          placeholder={`I am interested in ${address}`}
-          className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none text-white"
-          rows={3}
-        />
-      </label>
-
-      <button
-        type="button"
-        className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition sm:text-lg"
-      >
-        Submit
-      </button>
-    </form>
-  </div> */}
-
-  
-
-    </section>
-    <div className="w-[95vw] mx-auto h-[3px]
-    bg-gray-600 mt-6 rounded-2xl
-    max-w-[400px]"
-    />
-    <div className="bg-white shadow-md rounded-2xl p-6 w-[90vw] mx-auto
-    text-black">
+<div className="bg-white shadow-md rounded-2xl p-6 w-[90vw]">
   <h2 className="text-2xl font-semibold mb-6 border-b pb-2">
     60 Helen Creighton Court, Bedford, B4B 0Z5
   </h2>
@@ -377,6 +248,124 @@ referrerPolicy="no-referrer-when-downgrade"
     <div className="md:w-1/3"><span className="font-medium">Utilities:</span> Cable, Electricity, High Speed Internet, Natural Gas</div>
   </div>
 </div>
+
+
+
+<div className="flex items-center justify-center mx-auto
+w-screen">
+
+
+
+</div>
+
+<h3 className="font-bold
+        my-4 text-xl sm:text-2xl">
+    Map for&nbsp;{address}</h3>
+<iframe className="ml-auto mr-auto
+        w-[80vw] sm:w-[50vw] max-w-[500px] mt-5"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5669.174538738048!2d-63.664255299999994!3d44.7280343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5989c1fe032eb9%3A0x6dd167bbacea91be!2s1361%20Bedford%20Hwy%2C%20Bedford%2C%20NS%20B4A%201C5!5e0!3m2!1sen!2sca!4v1716386513142!5m2!1sen!2sca"
+width="600"
+height="450"
+style={{
+border:'0'
+}} // Pass the styles object here
+allowFullScreen
+loading="lazy"
+referrerPolicy="no-referrer-when-downgrade"
+>
+
+</iframe>
+
+
+</section>
+
+
+  
+           </section>
+           
+        
+           <div className="bg-gray-800 w-[95vw] max-w-[400px] mx-auto mt-6 p-6 rounded-lg max-h-[700px] overflow-y-auto">
+  <h2 className="font-bold text-xl mb-4 sm:text-2xl text-white">Request More Info</h2>
+  <form className="flex flex-col space-y-4 text-white">
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Full Name</span>
+      <input
+        type="text"
+        placeholder="Enter your full name"
+        className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-black"
+      />
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Email</span>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-black"
+      />
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Phone Number</span>
+      <input
+        type="tel"
+        placeholder="Optional, for faster contact"
+        className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
+      />
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Budget</span>
+      <input
+        type="text"
+        placeholder="e.g. $600,000 - $750,000"
+        className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-white"
+      />
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Ideal Move-in Timeline</span>
+      <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-black">
+        <option>ASAP</option>
+        <option>Within 1-3 months</option>
+        <option>Within 6 months</option>
+        <option>Just browsing for now</option>
+      </select>
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Preferred Contact Method</span>
+      <select className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-black">
+        <option>Email</option>
+        <option>Phone Call</option>
+        <option>Text Message</option>
+      </select>
+    </label>
+
+    <label className="flex flex-col">
+      <span className="font-semibold sm:text-lg">Message / Details</span>
+      <textarea
+        placeholder={`I am interested in ${address}`}
+        className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none resize-none text-black"
+        rows={3}
+      />
+    </label>
+
+    <button
+      type="button"
+      className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition sm:text-lg"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+
+    </section>
+    <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    />
 <GridCarousel
 images={listingImages}
 isGrid

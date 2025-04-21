@@ -191,7 +191,9 @@ text-black">
 
 
 
-
+    {/* <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl max-w-[400px]"
+    /> */}
  
 
    
@@ -209,7 +211,10 @@ text-black">
 <li className="mb-2 sm:text-lg">Year Built: {specs.yearBuilt}</li>
     </ul>
     </div>
-
+    {/* <div className="w-[95vw] mx-auto h-[3px]
+    bg-gray-600 mt-6 rounded-2xl
+    max-w-[400px]"
+    /> */}
     <div>
 
   
@@ -225,7 +230,6 @@ text-black">
 <li className="mb-2 sm:text-lg">Flooring: {highlights.flooring}</li>
 <li className="mb-2 sm:text-lg">Style: {highlights.style}</li>
 </ul>
-</div>
 
 
 
