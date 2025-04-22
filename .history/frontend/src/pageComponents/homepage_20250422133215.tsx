@@ -34,7 +34,6 @@ Upload your own
         <main className='overflow-x-hidden'>
                 <ThreeBoxHero
                 {...heroData}
-                textColor='text-white'
         button1={button1}
         button2={button2}
         
